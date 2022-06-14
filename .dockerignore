@@ -3,3 +3,8 @@ build
 .dockerignore
 Dockerfile
 Dockerfile.prod
+/terraform/.terraform
+/terraform/.terraform.lock.hcl
+/terraform/terraform.tfvars
+/terraform/terraform.tfstate
+/terraform/terraform.tfstate.backup

@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: pokemon-list
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pokemon-list
+  template:
+    metadata:
+      labels:
+        app: pokemon-list
+    spec:
+      containers:
+        - name: pokemon-list
+          image: pokemonlistacr.azurecr.io/pokemon
+          ports:
+            - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: load-balancer
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      protocol: TCP
+  selector:
+    app: pokemon-list

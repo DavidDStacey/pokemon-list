@@ -14,4 +14,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     client_id     = var.appid
     client_secret = var.password
   }
+  # identity {
+  #   type = "SystemAssigned"
+  # }
 }

@@ -34,7 +34,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_CONTAINER_REGISTRY: "pokemonlistacr.azurecr.io/pokemon"
+  AZURE_CONTAINER_REGISTRY: "pokemonlistacr.azurecr.io"
   CONTAINER_NAME: "pokemon"
   RESOURCE_GROUP: "pokemon-list-rg"
   CLUSTER_NAME: "pokemon-list-aks"

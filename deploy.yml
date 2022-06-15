@@ -16,7 +16,7 @@ spec:
         - name: pokemon-list
           image: pokemonlistacr.azurecr.io/pokemon
           ports:
-            - containerPort: 80
+            - containerPort: 3000
 ---
 kind: Service
 apiVersion: v1
@@ -26,6 +26,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
+      targetPort: 3000
       protocol: TCP
   selector:
     app: pokemon-list

@@ -32,11 +32,3 @@ This web app is created with:
 `docker build -t pokemon:web .`
 ### Run Container
 `docker run -d -it -p 3001:3000 --name pokemon-list pokemon:web`
-### Use docker-compose.yml
-`docker-compose up -d --build`
-### Use Specific Dockerfile (dockerfile.prod)
-`docker build -f Dockerfile.prod -t pokemon-list:prod .`
-### Run 
-`docker run -d -it-p 1337:80 pokemon-list:prod`
-### Use Specific docker compose (docker-compose.prod.yml)
-`docker-compose -f docker-compose.prod.yml up -d --build`

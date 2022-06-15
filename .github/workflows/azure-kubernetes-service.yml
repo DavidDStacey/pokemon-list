@@ -39,7 +39,7 @@ env:
   RESOURCE_GROUP: "pokemon-list-rg"
   CLUSTER_NAME: "pokemon-list-aks"
   IMAGE_PULL_SECRET_NAME: "secret-name"
-  DEPLOYMENT_MANIFEST_PATH: '\deploy.yml'
+  DEPLOYMENT_MANIFEST_PATH: 'deploy.yml'
 
 jobs:
   buildImage:

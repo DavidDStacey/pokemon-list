@@ -13,27 +13,27 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Microsoft Azure Container Registry Login
-      uses: elgohr/acr-login-action@0.1
+#     - name: Microsoft Azure Container Registry Login
+#       uses: elgohr/acr-login-action@0.1
+#       with:
+#         service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
+#         service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
+#         tenant: ${{ secrets.AZURE_TENANT_ID }}
+#         registry: pokemonlistacr.azurecr.io
+#         repository: pokemon
+
+
+    - name: Azure Container Registry Build
+      uses: Azure/acr-build@v1
       with:
         service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
         service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
         tenant: ${{ secrets.AZURE_TENANT_ID }}
         registry: pokemonlistacr.azurecr.io
         repository: pokemon
-
-
-#     - name: Azure Container Registry Build
-#       uses: Azure/acr-build@v1
-#       with:
-#         service_principal: ${{ secrets.USERNAME }}
-#         service_principal_password: ${{ secrets.PASSWORD }}
-#         tenant: ${{ secrets.AZURE_TENANT_ID }}
-#         registry: pokemonlistacr.azurecr.io
-#         repository: pokemon
-#         #image: pokemon
-#         #folder: /
-#         #dockerfile: dockerfile
+        #image: pokemon
+        #folder: /
+        #dockerfile: dockerfile
 
 
         

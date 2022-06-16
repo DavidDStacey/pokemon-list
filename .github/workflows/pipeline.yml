@@ -26,6 +26,7 @@ jobs:
     - name: Azure Container Registry Build
       uses: Azure/acr-build@v1
       with:
+        branch: main
         service_principal: ${{ secrets.SP }}
         service_principal_password: ${{ secrets.SP_PASSWORD }}
         tenant: ${{ secrets.SP_TENANT }}

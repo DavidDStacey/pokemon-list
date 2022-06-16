@@ -29,6 +29,7 @@ jobs:
         registry: ${{ secrets.REGISTRY }}
         repository: ${{ secrets.REPOSITORY }}
         image: image
+        tag: ${{ github.sha }}
         folder: ./
         dockerfile: ./dockerfile
         

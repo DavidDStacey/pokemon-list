@@ -19,7 +19,7 @@ jobs:
         service_principal: ${{ secrets.SP }}
         service_principal_password: ${{ secrets.SP_PASSWORD }}
         tenant: ${{ secrets.SP_TENANT }}
-        registry: ${{ secrets.REGISTRY }}
+        registry: pokemonlistacr.azurecr.io
         repository: ${{ secrets.REPOSITORY }}
 
 

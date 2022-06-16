@@ -32,8 +32,8 @@ jobs:
         registry: pokemonlistacr.azurecr.io
         repository: pokemon
         #image: pokemon
-        #folder: /
-        #dockerfile: dockerfile
+        folder: /
+        dockerfile: dockerfile
 
 
         

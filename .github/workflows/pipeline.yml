@@ -26,21 +26,13 @@ jobs:
     - name: Azure Container Registry Build
       uses: Azure/acr-build@v1
       with:
-        # Service Principal with Contributor role on the ACR
         service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
-        # Service Principal password
         service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
-        # Azure Container Registry tenant
         tenant: ${{ secrets.AZURE_TENANT_ID }}
-        # The name of the ACR, minus the .azurecr.io
         registry: pokemonlistacr.azurecr.io
-        # Repository to use
         repository: pokemon
-        # Docker image name
-        image: pokemon
-        # The folder in the Github repo that holds the source
+        #image: pokemon
         folder: /
-        # The location of the Dockerfile; defaults to ./Dockerfile
         dockerfile: dockerfile
 
 

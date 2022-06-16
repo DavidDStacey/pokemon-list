@@ -25,5 +25,4 @@ jobs:
     - name: Docker Build 
       run: |
         docker build --file Dockerfile --tag pokemonlistacr.azurecr.io/pokemon:${{ github.sha }} .
-        docker push pokemonlistacr.azurecr.io/pokemon:${{ github.sha }}
-        kubectl apply -f deploy.yml
+        

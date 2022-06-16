@@ -33,7 +33,7 @@ jobs:
         repository: REPOSITORY
         image: image
         folder: /
-        dockerfile: ./dockerfile
+        dockerfile: ../dockerfile
 
 
         

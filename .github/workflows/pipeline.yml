@@ -22,6 +22,8 @@ jobs:
         registry: pokemonlistacr.azurecr.io
         repository: pokemon
     
-    # - name: Docker Build 
-    #   run: |
-    #     docker build --file Dockerfile --tag pokemonlistacr.azurecr.io/pokemon:${{ github.sha }} .
+    - name: Docker Build 
+      run: |
+        docker build --file Dockerfile --tag pokemonlistacr.azurecr.io/pokemon:${{ github.sha }} .
+        docker push pokemonlistacr.azurecr.io/pokemon:${{ github.sha }}
+        kubectl apply -f deploy.yml

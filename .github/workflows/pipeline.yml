@@ -21,14 +21,27 @@ jobs:
 #         tenant: ${{ secrets.AZURE_TENANT_ID }}
 #         registry: pokemonlistacr.azurecr.io
 #         repository: pokemon
-    - name: Docker Login
-      uses: docker/login-action@v2.0.0
+
+
+    - name: Azure Container Registry Build
+      uses: Azure/acr-build@v1
       with:
-        # Server address of Docker registry. If not set then will default to Docker Hub
+        # Service Principal with Contributor role on the ACR
+        service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
+        # Service Principal password
+        service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
+        # Azure Container Registry tenant
+        tenant: ${{ secrets.AZURE_TENANT_ID }}
+        # The name of the ACR, minus the .azurecr.io
         registry: pokemonlistacr.azurecr.io
-        # Username used to log against the Docker registry
-        username: ${{ secrets.USERNAME }}
-        # Password or personal access token used to log against the Docker registry
-        password: ${{ secrets.PASSWORD }}
+        # Repository to use
+        repository: pokemon
+        # Docker image name
+        image: pokemon
+        # The folder in the Github repo that holds the source
+        folder: /
+        # The location of the Dockerfile; defaults to ./Dockerfile
+        dockerfile: dockerfile
+
 
         

@@ -30,8 +30,8 @@ jobs:
         service_principal: ${{ secrets.SP }}
         service_principal_password: ${{ secrets.SP_PASSWORD }}
         tenant: ${{ secrets.SP_TENANT }}
-        registry: REGISTRY
-        repository: REPOSITORY
+        registry: ${{ secrets.REGISTRY }}
+        repository: ${{ secrets.REPOSITORY }}
         image: image
         folder: src/
         dockerfile: ../dockerfile

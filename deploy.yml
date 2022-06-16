@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pokemon-list
-          image: pokemonlistacr.azurecr.io/pokemon
+          image: pokemonlistacr.azurecr.io/pokemon/image
           ports:
             - containerPort: 3000
 ---

@@ -13,16 +13,22 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Microsoft Azure Container Registry Login
-      uses: elgohr/acr-login-action@0.1
+#     - name: Microsoft Azure Container Registry Login
+#       uses: elgohr/acr-login-action@0.1
+#       with:
+#         service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
+#         service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
+#         tenant: ${{ secrets.AZURE_TENANT_ID }}
+#         registry: pokemonlistacr.azurecr.io
+#         repository: pokemon
+    - name: Docker Login
+      uses: docker/login-action@v2.0.0
       with:
-        service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
-        service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
-        tenant: ${{ secrets.AZURE_TENANT_ID }}
+        # Server address of Docker registry. If not set then will default to Docker Hub
         registry: pokemonlistacr.azurecr.io
-        repository: pokemon
-    
-    - name: Docker Build 
-      run: |
-        docker build --file Dockerfile --tag pokemonlistacr.azurecr.io/pokemon:${{ github.sha }} .
+        # Username used to log against the Docker registry
+        username: ${{ secrets.USERNAME }}
+        # Password or personal access token used to log against the Docker registry
+        password: ${{ secrets.PASSWORD }}
+
         

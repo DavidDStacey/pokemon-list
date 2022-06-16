@@ -31,7 +31,7 @@ jobs:
         tenant: ${{ secrets.AZURE_TENANT_ID }}
         registry: pokemonlistacr.azurecr.io
         repository: pokemon
-        #image: pokemon
+        image: pokemon${{ github.sha }}
         folder: /
         dockerfile: dockerfile
 

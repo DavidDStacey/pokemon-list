@@ -141,3 +141,7 @@ Additional secret vairables:
           ${{ env.REGISTRY_NAME }}-registry-connection
         namespace: ${{ env.NAMESPACE }}
 ```
+
+![image](https://user-images.githubusercontent.com/54081993/174166698-e9e592b0-41b5-4c79-b2b6-eb94f95a69b7.png)![image](https://user-images.githubusercontent.com/54081993/174166925-541e7aa6-beee-4912-9ca1-39be260a6cf9.png)
+
+

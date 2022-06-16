@@ -32,7 +32,7 @@ jobs:
         registry: REGISTRY
         repository: REPOSITORY
         image: image
-        folder: ./
+        folder: src/
         dockerfile: ./dockerfile
 
 

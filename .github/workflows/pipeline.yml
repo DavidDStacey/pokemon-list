@@ -17,12 +17,11 @@ jobs:
       uses: elgohr/acr-login-action@0.1
       with:
         service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
-        service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARd }}
+        service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
         tenant: ${{ secrets.AZURE_TENANT_ID }}
         registry: pokemonlistacr.azurecr.io
         repository: pokemon
     
-#     - name: Docker Build 
-#       run: |
-#         image: 
-#         docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    # - name: Docker Build 
+    #   run: |
+    #     docker build --file Dockerfile --tag pokemonlistacr.azurecr.io/pokemon:${{ github.sha }} .

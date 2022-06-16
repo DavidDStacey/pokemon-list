@@ -16,10 +16,10 @@ jobs:
     - name: Microsoft Azure Container Registry Login
       uses: elgohr/acr-login-action@0.1
       with:
-        service_principal: ${{ secrets.SP }}
-        service_principal_password: ${{ secrets.SP_PASSWORD }}
-        tenant: ${{ secrets.SP_TENANT }}
-        registry: pokemonlistacr.azurecr.io
+        service_principal: ${{ secrets.SERVICE_PRINCIPAL }}
+        service_principal_password: ${{ secrets.SERVICE_PRINCIPAL_PASSWARD }}
+        tenant: ${{ secrets.AZURE_TENANT_ID }}
+        registry: ${{ secrets.REGISTRY }}
         repository: ${{ secrets.REPOSITORY }}
 
 
